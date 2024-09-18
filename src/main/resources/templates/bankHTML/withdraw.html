@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layoyt"
+	layout:decorate="~{layout/layout}">
+
+<head>
+	<meta charset="UTF-8">
+
+	<title>引き出し処理</title>
+	<link rel="stylesheet" th:href="@{/css/layout/withdraw.css}">
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<main id="wrapper">
+			<h1 class="transaction-title">引出金額画面</h1>
+			<p>引出金額を入力してください</p>
+			<form method="post" th:action="@{/withdraw}">
+				<input type="text" name="withdrawalAmount" placeholder="例）1500"/>
+				<input type="submit" value="引き出す" />
+			</form>
+		</main>
+	</div>
+</body>
+
+</html>

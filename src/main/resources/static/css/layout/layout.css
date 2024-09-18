@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+html {
+	font-size: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+.content {
+	background: linear-gradient(white, green);
+	background-size: cover;
+	margin: 0 auto;
+	height: 100vh;
+}
+
+/*ヘッダー部分*/
+
+.header-logo .logo {
+	line-height: 1px;
+	width: 210px;
+	height: 50px;
+}
+
+.header-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 10px;
+	align-items: center;
+	background-color: skyblue;
+}
+
+.header-menu {
+	font-family: 'BIZ UDPGothic', sans-serif;
+	display: flex;
+	list-style: none;
+}
+
+.header-menu li {
+	margin-left: 40px;
+}
+
+/*フッター*/
+footer {
+	text-align: center;
+	font-family: 'BIZ UDPGothic', sans-serif;
+	font-size: 0.8rem;
+	background-color: aquamarine;
+}
+
+/*コンテンツ達（レイアウトを使用すると個別のCSS指定は難しいそうで、まとめて書きますぅ）*/
+

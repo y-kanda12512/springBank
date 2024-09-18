@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>取引履歴</title>
+	<link rel="stylesheet" th:href="@{/css/layout/history.css}">
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div id="history">
+			<h1 class="history-logo">取引履歴</h1>
+			<table class="table-history">
+				<thead>
+					<tr>
+						<th class="th-width">取引番号</th>
+						<th class="th-width">取引者名</th>
+						<th class="th-width">取引後残高</th>
+						<th class="th-width">ユーザー名</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="list:${historyList}">
+						<td th:text="${list.transactionId}"></td>
+						<td th:text="${list.transactionName}"></td>
+						<td th:text="${list.balance}"></td>
+						<td th:text="${list.userId}"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<!--メイン画面へリダイレクト-->
+			<a class="button-redirect" href="/redirectMain">メイン画面へ戻る</a>
+		</div>
+	</div>
+</body>
+
+</html>

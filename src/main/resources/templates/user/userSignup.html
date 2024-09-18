@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ユーザー登録</title>
+
+	<!--CSS読み込み-->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<!--JS読み込み-->
+	<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<main id="wrapper">
+			<h1 class="transaction-title">ユーザー情報登録画面</h1>
+			<p>ユーザー情報を入力して下さい</p>
+			<div class="signupForm">
+				<!--ユーザーIDはプログラム上で採番する-->
+				<form method="post" th:action="@{/signup}" th:object="${user}">
+					<div class="form-group">
+						<label th:text="#{userName}"></label>
+						<input class="form-control" type="text" th:field="*{userName}" th:errorclass="is-invalid"
+							placeholder="山田 太郎" />
+						<div class="invalid-feedback" th:errors="*{userName}"></div>
+					</div>
+					<div class="form-group">
+						<label th:text="#{password}"></label>
+						<input class="form-control" type="text" th:field="*{password}" th:errorclass="is-invalid"
+							placeholder="パスワードは結構頑丈なやつにしてな" />
+						<div class="invalid-feedback" th:errors="*{password}"></div>
+					</div>
+					<div class="form-group">
+						<label th:text="#{balance}"></label>
+						<input class="form-control" type="text" th:field="*{balance}" th:errorclass="is-invalid" />
+						<div class="invalid-feedback" th:errors="*{balance}"></div>
+					</div>
+
+					<!--この辺は実装めんどくさいから飾り-->
+
+					<div class="radioGroup">
+						<input type="radio" name="gender" value="1" id="man">
+						<label for="man">男</label>
+						<input type="radio" name="gender" value="2" id="womasn">
+						<label for="woman">女</label>
+					</div>
+
+					<div class="prefectureGroup">
+						<select class="prefecture">
+							<option value="1">東京</option>
+							<option value="2">神奈川</option>
+							<option value="3">埼玉</option>
+							<option value="4">千葉</option>
+						</select>
+					</div>
+
+					<!--この辺は実装めんどくさいから飾り-->
+
+					<input type="submit" value="登録" />
+				</form>
+			</div>
+		</main>
+	</div>
+</body>
+
+</html>

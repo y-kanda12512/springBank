@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layoyt"
+	layout:decorate="~{layout/layout}">
+
+<head>
+	<meta charset="UTF-8">
+
+	<title>預け入れ画面</title>
+	<link rel="stylesheet" th:href="@{/css/layout/deposit.css}">
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<main id="wrapper">
+			<h1 class="transaction-title">預入画面</h1>
+			<p>預入金額を入力してください</p>
+			<form class="deposit-form" method="post" th:action="@{/depositRegistration}">
+				<input type="text" class="deposit-button" name="deposit" placeholder="例）1500"/>
+
+				<!--登録ボタン-->
+				<input type="submit" value="入金する" />
+			</form>
+		</main>
+	</div>
+</body>
+
+</html>

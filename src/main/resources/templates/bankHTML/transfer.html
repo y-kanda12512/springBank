@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+
+<head>
+	<meta charset="UTF-8">
+
+	<title>トップページ</title>
+	<link rel="stylesheet" th:href="@{/css/layout/transfer.css}">
+</head>
+
+<body>
+
+	<div layout:fragment="content">
+		<main id="wrapper">
+			<h1 class="transaction-title">振込画面</h1>
+			<form class="transfer-form" method="post" th:action="@{/transfer}">
+				<p>振り込み口座のユーザーIDを指定してください</p>
+				<input type="text" name="userId" class="user" />
+				<p>振り込み金額を指定してください</p>
+				<input type="text" name="TransferAmount" />
+				<input type="submit" value="振り込む" />
+			</form>
+		</main>
+	</div>
+</body>
+
+</html>

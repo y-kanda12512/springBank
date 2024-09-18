@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+html {
+	font-size: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+#wrapper {
+	margin: 0 auto;
+	text-align: center;
+	width: 1000px;
+	padding: 20px;
+}
+
+#wrapper .transaction-title {
+	border-bottom: 20px;
+}
+

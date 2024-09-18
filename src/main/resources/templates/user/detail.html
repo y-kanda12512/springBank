@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ユーザーの詳細画面ですよ</title>
+</head>
+<link rel="stylesheet" th:href="@{/css/user/detail.css}">
+
+<body>
+	<div layout:fragment="content">
+		<h1>ユーザー詳細</h1>
+		<table>
+			<tbody>
+				<form th:action="@{/detail}" method="post" th:object="${user}">
+					<input type="hidden" th:field="*{userId}"/>
+					<table>
+						<tbody>
+							<tr class="detailHeading">
+								<th>ユーザーID</th>
+								<th>ユーザー名</th>
+								<th>パスワード</th>
+							</tr>
+							<tr>
+								<td th:text="*{userId}"></td>
+								<td><input type="text" th:field="*{userName}" /></td>
+								<td><input type="text" th:field="*{password}" /></td>
+							</tr>
+						</tbody>
+					</table>
+					<div>
+						<button type="submit" name="delete">削除のボタン</button>
+						<button type="submit" name="update">更新のボタン</button>
+					</div>
+				</form>
+			</tbody>
+		</table>
+		<a th:href="@{/list}">ユーザーリスト画面に戻る</a>
+	</div>
+</body>
+
+</html>

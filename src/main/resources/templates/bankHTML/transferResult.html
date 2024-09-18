@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>振込後残高表示</title>
+</head>
+<body>
+	<h1>ご利用ありがとうございました</h1>
+	<p>ユーザー<span th:text="${userId}"></span>のご利用残高は<span th:text="${balanceResult}"></span>です</p>
+	
+	<!--メイン画面にリダイレクト-->
+	<a href="/redirectMain">メイン画面に戻る</a>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.BankMapper">
+	<resultMap id="history" type="com.example.demo.entity.history.MHistory">
+		<id column="transactionId" property="transactionId" />
+		<result column="transactionName" property="transactionName" />
+		<result column="balance" property="balance" />
+		<result column="userId" property="userId" />
+	</resultMap>
+	
+	<select id="getHistory" resultMap="history">
+		SELECT * FROM history;
+	</select>
+	
+	<update id="balanceUpdgetBalanceate">
+		<!--デフォルトではユーザー1の残高アップデートを行う-->
+		UPDATE m_user SET balance = balance + #{depositMoney} WHERE userId = '1';
+	</update>
+	
+	<update id="balanceUpdateOtherUsers">
+		UPDATE m_user SET balance = balance + #{TransferAmount} WHERE userId = #{userId};
+	</update>
+	
+	<!--ログイン機能未実装なので、ユーザー1の残高を取得-->
+	<select id="getBalance" resultType="int">
+		SELECT balance FROM m_user WHERE userId = '1';
+	</select>
+	
+	<select id="getBalanceOtherUsers" resultType="int">
+		SELECT balance FROM m_user WHERE userId = #{userId};
+	</select>
+	
+	<!--Historyテーブルの現在のシリアルナンバーを取得-->
+	<select id="getHistorySerialNumber" resultType="Integer">
+		SELECT historyNumber FROM SerialNumber;
+	</select>
+	
+	<update id="updateHistorySerialNumber">
+		UPDATE SerialNumber SET historyNumber = historyNumber + 1
+	</update>
+
+	<!--ユーザーテーブルの現在のシリアルナンバーを取得-->
+	<select id="getUserSerialNumber" resultType="Integer">
+		SELECT userNumber FROM SerialNumber;
+	</select>
+	
+	<update id="updateUserSerialNumber">
+		UPDATE SerialNumber SET userNumber = userNumber + 1
+	</update>
+	
+	<!--Historyテーブルのインサート-->
+	<insert id="insertHistory">
+		INSERT INTO history 
+		(transactionId,transactionName,balance,userId)
+		VALUES(#{transactionId},#{transactionName},#{balance},#{userId});
+	</insert>
+	
+	<insert id="signupUser">
+		INSERT INTO m_user
+		(userId,userName,password,balance)
+		VALUES(#{userId},#{userName},#{password},#{balance})
+	</insert>
+	
+	<!--ユーザー一覧取得-->
+	<select id="getUserList" resultType="com.example.demo.entity.user.MUser">
+		SELECT * FROM m_user;
+	</select>
+	
+	<!--ユーザーを取得（1件）-->
+	<select id="getUserOne" resultType="com.example.demo.entity.user.MUser">
+		SELECT * FROM m_user WHERE userId = #{userId};
+	</select>
+	
+	<update id="updateUserOne">
+		UPDATE m_user SET userName = #{userName},password = #{password} WHERE userId = #{userId};
+	</update>
+	
+	<delete id="deleteUserOne">
+		DELETE FROM m_user WHERE userId = #{userId};
+	</delete>
+</mapper>

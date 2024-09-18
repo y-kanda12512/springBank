@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.detailHeading{
+	padding: 10px;
+	border-bottom: 10px;
+	color: red;
+	font-size: 20px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ユーザーの一覧じゃ</title>
+	<link rel="stylesheet" th:href="@{/css/layout/list.css}">
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<main id="wrapper">
+			<h1 class="transaction-title">ユーザー一覧です。何なりとお使いください</h1>
+			<table class="table-users">
+				<thead>
+					<tr>
+						<th>ユーザーID</th>
+						<th>ユーザーネーム</th>
+						<th>パスワード</th>
+						<th>残高</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="item : ${userList}">
+						<td th:text="${item.userId}"></td>
+						<td th:text="${item.userName}"></td>
+						<td th:text="${item.password}"></td>
+						<td th:text="${item.balance}"></td>
+						<td><a th:href="@{'/detailUser/' + ${item.userId}}">詳細</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</main>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<head>
+	<meta charset="UTF-8">
+	<!--CSS-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Philosopher">
+</head>
+
+<body>
+	<nav layout:fragment="header" class="header-container">
+		<div class="header-logo">
+			<a th:href="@{/redirectMain}"><img th:src="@{images/logo.svg}" class="logo" alt="これはロゴ画像"></a>
+		</div>
+		<ul class="header-menu">
+			<li><a>ダミーその1</a></li>
+			<li><a>ダミーその2</a></li>
+			<li><a>ダミーその3</a></li>
+		</ul>
+	</nav>
+	</div>
+</body>
+
+</html>

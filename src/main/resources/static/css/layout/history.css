@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/*取引入歴*/
+
+#history {
+	margin: 0 auto;
+	width: 1000px;
+	text-align: center;
+	padding: 20px;
+}
+
+#history .history-logo {
+	margin-bottom: 20px;
+}
+
+#history .table-history {
+	margin: 0 auto;
+}
+
+#history .table-history,
+.table-history th,
+.table-history td {
+	padding: 10px;
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+#history .button-redirect {
+	width: 210px;
+	padding: 20px 40px;
+	border: 1px darkolivegreen solid;
+	margin-top: 40px;
+	font-family: 'BIZ UDPGothic', sans-serif;
+	display: inline-block;
+}

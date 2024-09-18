@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>引き出し後の画面</title>
+</head>
+
+<body>
+	<h1>ご利用ありがとうございました</h1>
+	<p>ご利用後の残高は<span th:text="${balanceResult}"></span>です</p>
+	<!--メイン画面へリダイレクト-->
+	<a href="/redirectMain">メイン画面へ戻る</a>
+</body>
+
+</html>

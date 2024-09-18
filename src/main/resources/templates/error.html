@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>エラー出力</h1>
+	<p th:text="${status} + '' + ${error}"></p>
+	<form method="post" th:action="@{/logout}">
+		<button type="submit">メニューに戻る</button>
+	</form>
+</body>
+
+</html>
